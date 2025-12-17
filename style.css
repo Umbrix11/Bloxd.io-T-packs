@@ -1,0 +1,321 @@
+/* Glowing title */
+header h1 {
+  font-size: 3em;
+  color: #ffffff;
+  text-shadow: 
+    0 0 5px rgba(255,255,255,0.4),
+    0 0 15px rgba(255,255,255,0.6),
+    0 0 30px rgba(255,255,255,0.3);
+  animation: glow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow:
+      0 0 5px rgba(255,255,255,0.3),
+      0 0 15px rgba(255,255,255,0.4),
+      0 0 25px rgba(255,255,255,0.2);
+  }
+  to {
+    text-shadow:
+      0 0 10px rgba(255,255,255,0.6),
+      0 0 25px rgba(255,255,255,0.8),
+      0 0 40px rgba(255,255,255,0.4);
+  }
+}
+
+/* --- Global Styles: Light Theme --- */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0; /* Light Gray Background */
+    color: #333333; /* Dark Gray Text */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* --- Header Styling --- */
+header {
+    background-color: #000000; /* Pure Black Header */
+    color: white; 
+    padding: 40px 0;
+    margin-bottom: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+    color: white;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #cccccc;
+}
+
+/* --- Packs Container and 3-Column Layout --- */
+
+.packs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+    /* 3 Column Layout for all 12 boxes */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; 
+    justify-content: center;
+}
+
+/* Pack Box Styling */
+.pack-item {
+    background-color: #ffffff; /* White Box */
+    border-radius: 10px;
+    border: 1px solid #dddddd; 
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    
+    /* Animation Transition */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s;
+}
+
+/* Hover Animation Effect */
+.pack-item:hover {
+    transform: translateY(-8px); /* Lifts the box up */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    border-color: #000000; /* Black border on hover */
+}
+
+.pack-item h2 {
+    color: #000000; 
+    margin-top: 0;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.pack-item p {
+    color: #666666; 
+    font-size: 1em;
+    height: 60px; /* Consistent height for alignment */
+}
+
+/* Download Button Styling */
+.download-button {
+    display: inline-block;
+    background-color: #000000; /* Black Button */
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.1em;
+    /* Animation Transition */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Button Hover Animation */
+.download-button:hover {
+    background-color: #333333; /* Dark Gray Button on hover */
+    transform: scale(1.05); 
+}
+
+/* Footer Styling */
+footer {
+    margin-top: 60px;
+    padding: 20px 0;
+    background-color: #111111; 
+    color: #aaaaaa;
+    font-size: 0.9em;
+    border-top: 1px solid #333;
+}
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  header p {
+    font-size: 1em;
+    padding: 0 10px;
+  }
+
+  /* 3 column → 1 column */
+  .packs-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  .pack-item {
+    padding: 20px;
+  }
+
+  .pack-item h2 {
+    font-size: 1.4em;
+  }
+
+  .pack-item p {
+    font-size: 0.95em;
+    height: auto;
+  }
+
+  /* Full width button */
+  .download-button {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 1.1em;
+  }
+
+}
+@media (max-width: 1024px) {
+  .packs-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Animated header background */
+header {
+  background: linear-gradient(270deg, #000000, #111111, #000000);
+  background-size: 400% 400%;
+  animation: bgMove 12s ease infinite;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #0b0b0b;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: noiseMove 10s linear infinite;
+}
+
+@keyframes noiseMove {
+  from { background-position: 0 0; }
+  to   { background-position: 40px 40px; }
+}
+.download-btn {
+  position: relative;
+  padding: 14px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 10px 25px rgba(0, 114, 255, 0.3);
+}
+
+/* Hover feel */
+.download-btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 15px 35px rgba(0, 114, 255, 0.45);
+}
+
+/* Click feel */
+.download-btn:active {
+  transform: scale(0.97);
+}
+
+/* Shimmer animation */
+.download-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.35),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+/* Shimmer on hover */
+.download-btn:hover::before {
+  left: 120%;
+}
+.download-btn:hover {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 rgba(0,114,255,0.6); }
+  70% { box-shadow: 0 0 25px rgba(0,114,255,0); }
+  100% { box-shadow: 0 0 0 rgba(0,114,255,0); }
+}
+.download-btn {
+  position: relative;
+  padding: 14px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+
+  transition:
+    background 0.5s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  
+  box-shadow: 0 10px 25px rgba(0, 114, 255, 0.35);
+}
+
+/* Hover state */
+.download-btn:hover {
+  background: linear-gradient(135deg, #7f00ff, #e100ff);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(225, 0, 255, 0.45);
+}
+
+/* Mouse leave smooth return */
+.download-btn:not(:hover) {
+  transition: background 0.6s ease;
+}
+
+/* Click feel */
+.download-btn:active {
+  transform: scale(0.97);
+}
+
+/* Shine effect */
+.download-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.35),
+    transparent
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+
+.download-btn:hover::before {
+  transform: translateX(120%);
+}
+/* Normal */
+background: linear-gradient(135deg, #00c6ff, #0072ff);
+
+/* Hover */
+background: linear-gradient(135deg, #7f00ff, #e100ff);
+
